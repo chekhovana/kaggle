@@ -1,0 +1,26 @@
+dataset:
+  type: classification
+  split: splits/background/split_full
+  size:
+    train: 1000
+    val: 1000
+  folder: data/train
+  img_size:
+    height: 256
+    width: 1600
+  crop_size:
+    height: 256
+    width: 1600
+  mask:
+    binary_mode: False
+    reduce_zero_label: False
+    without_background: True
+    channel:
+  num_classes: 4
+  batch_size:
+    train: 16
+    valid: 8
+checkpoint:
+  dir: logs/classification/resnet50
+  resume:
+#    logs/classification/resnet50/checkpoints/last_full.pth

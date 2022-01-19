@@ -1,0 +1,26 @@
+dataset:
+  type: segmentation
+  split: splits/defects/split_full
+  size:
+  folder: data/train
+  img_size:
+    height: 256
+    width: 1600
+  crop_size:
+    height: 256
+    width: 384
+  mask:
+    #when True, all classes are merged into one, for background separation task
+    binary_mode: False
+    #whether background should be masked, to ignore it in loss calculation
+    reduce_zero_label: False
+    #whether background should be segmented separately as independent class with addition to defects
+    without_background: True
+  num_classes: 4
+  batch_size:
+    train: 16
+    valid: 8
+checkpoint:
+  dir: logs/segmentation
+  resume:
+#  resume: logs/segmentation/unet_efficientnet_b5/checkpoints/last_full.pth

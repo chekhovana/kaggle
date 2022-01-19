@@ -1,0 +1,26 @@
+dataset:
+  type: segmentation
+  split: splits/classes/class_2/split_full
+  folder: data/train
+  img_size:
+    height: 256
+    width: 1600
+  crop_size:
+    height: 256
+    width: 512
+  mask:
+    #when True, all classes are merged into one, for background separation task
+    binary_mode: True
+    #whether background should be masked, to ignore it in loss calculation
+    reduce_zero_label: False
+    #whether background should be segmented separately as independent class with addition to defects
+    without_background: True
+    #ordinal number of defect to consider
+    channel: 2
+  num_classes: 1
+  batch_size:
+    train: 16
+    valid: 8
+checkpoint:
+  dir: logs/segmentation/channel_2
+  resume:

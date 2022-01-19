@@ -1,0 +1,21 @@
+dataset:
+  type: segmentation
+  split: splits/background/split_full
+  folder: data/train
+  img_size:
+    height: 256
+    width: 1600
+  crop_size:
+    height: 256
+    width: 256
+  mask:
+    binary_mode: False
+    reduce_zero_label: False
+    without_background: True
+  num_classes: 4
+  batch_size:
+    train: 8
+    valid: 4
+checkpoint:
+  dir:
+  resume:
